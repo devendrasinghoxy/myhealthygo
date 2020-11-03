@@ -3339,6 +3339,10 @@ button:focus, input:focus, select:focus, textarea:focus{
 }
 /* Ceo message css start */
 /* Opportunity page css start */
+.opportunity_page_wrapper{
+	padding-top:60px;
+	padding-bottom:60px;
+}
 .opportunity_rows {
     display: table;
     width: 100%;
@@ -3351,6 +3355,9 @@ button:focus, input:focus, select:focus, textarea:focus{
     -webkit-box-shadow: 5px 8px 18px -13px rgb(0 0 0 / 35%);
     -moz-box-shadow: 5px 8px 18px -13px rgb(0 0 0 / 35%);
     box-shadow: 5px 8px 18px -13px rgb(0 0 0 / 35%);
+}
+.opportunity_rows:last-child {
+    margin-bottom: 0;
 }
 .opportunity_rows .icon_box {
     width: 80px;
