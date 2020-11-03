@@ -3347,6 +3347,10 @@ button:focus, input:focus, select:focus, textarea:focus{
     vertical-align: middle;
     padding-left: 15px;
     position: relative;
+    border-radius: 1em;
+    -webkit-box-shadow: 5px 8px 18px -13px rgb(0 0 0 / 35%);
+    -moz-box-shadow: 5px 8px 18px -13px rgb(0 0 0 / 35%);
+    box-shadow: 5px 8px 18px -13px rgb(0 0 0 / 35%);
 }
 .opportunity_rows .icon_box {
     width: 80px;
@@ -3373,5 +3377,8 @@ button:focus, input:focus, select:focus, textarea:focus{
 }
 .opportunity_rows .opportunity_text h4 {
     font-size: 20px;
-}
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}	
 /* Opportunity page css start */
