@@ -878,3 +878,44 @@
 	-ms-animation: slideInUp 1s 1 both;
 	animation: slideInUp 1s 1 both;
 }
+@-webkit-keyframes frombottom_menu {
+	from {
+		-webkit-transform: translateY(50px);
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		-webkit-transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@keyframes frombottom_menu {
+	from {
+		transform: translateY(50px);
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@-moz-keyframes frombottom_menu {
+	from {
+		-moz-transform: translateY(50px);
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		-moz-transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.frombottom_menu {
+	-webkit-animation: frombottom_menu 1 1s ease-in both;
+	-moz-animation: frombottom_menu 1 1s ease-in both;
+	animation: frombottom_menu 1 1s ease-in both;
+}

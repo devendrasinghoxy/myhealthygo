@@ -27,9 +27,9 @@
 	var win_scroll = $(window).scrollTop();
 	$(window).on('bind scroll', function(e) {
 		if ($(window).scrollTop() > 500) {
-			$('.navigation_header').addClass('fixed_menu');
+			$('.navigation_header_wrap').addClass('fixed_menu');
 		} else {
-			$('.navigation_header').removeClass('fixed_menu');
+			$('.navigation_header_wrap').removeClass('fixed_menu');
 		}	
 	});
 	//cart list open close js
@@ -241,7 +241,7 @@
 		}
 	});
 	//popup gallery js
-	$('.gallery_popup').magnificPopup({
+	$('.gallery_popup_wrapper').magnificPopup({
 		delegate: '.gallery_icon',
 		type: 'image',
 		tLoading: 'Loading image #%curr%...',
@@ -292,9 +292,9 @@
 		//$(".ac_heading").not(this).removeClass("active");
 	});
 	//counter js
-	if ($('.counter_n').length > 0){
-		$('.counter_n').appear(function() {
-			$('.counter_n').each(count);
+	if ($('.counter_number').length > 0){
+		$('.counter_number').appear(function() {
+			$('.counter_number').each(count);
 			function count(options) {	
 				var $this = $(this);
 				options = $.extend({}, options || {}, $this.data('countToOptions') || {});
