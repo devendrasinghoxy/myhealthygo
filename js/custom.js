@@ -97,9 +97,9 @@
 		items:4,
 		loop:true,
 		margin:15,
-		autoplay:false,
+		autoplay:true,
 		autoplayHoverPause:true,
-		autoplayTimeout:2000,
+		autoplayTimeout:3000,
 		autoplaySpeed:1500,
 		smartSpeed:1500,
 		dots:false,
@@ -127,6 +127,38 @@
 			}
 		}
 	});
+	$('.video_carousel').owlCarousel({
+        items:4,
+        loop:true,
+        margin:10,
+		autoplay:true,
+		autoplayTimeout:2400,
+		autoplaySpeed:1500,
+		smartSpeed:1500,
+        video:true,
+        lazyLoad:true,
+		dots:false,
+		nav:true,
+		navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+		responsiveClass: true,
+        responsive:{
+			0:{
+                items:1
+            },
+            575:{
+                items:2
+            },
+            768:{
+                items:3
+            },
+			992:{
+                items:3
+            },
+			1200:{
+                items:4
+            }
+        }
+    });
 	//product syncronise carousel
 	$(document).ready(function() {
 	  var sync1 = $(".sync_product");
@@ -240,12 +272,33 @@
 			}
 		}
 	});
-	//popup gallery js
+	//gallery js
 	$('.gallery_popup_wrapper').magnificPopup({
-		delegate: '.gallery_icon',
+		delegate: '.glr_popup_icon',
 		type: 'image',
 		tLoading: 'Loading image #%curr%...',
 		mainClass: 'my_zoom_in',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: false,
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title') + '<small></small>';
+			}
+		}
+	});
+	//legal gallery js
+	$('.legal_gallery_wrapper').magnificPopup({
+		delegate: '.glr_popup_icon',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'my_zoom_in legal_gallery_dv',
 		fixedContentPos: true,
 		fixedBgPos: true,
 		overflowY: false,
@@ -341,10 +394,10 @@
 	//wow animation js
 	new WOW().init();
 	//slider img call in bg
-	// $(".slide_img").each(function () {
-		// var img_path = $(this).attr("src");
-		// $(this).parents(".slide_item").css("background-image","url("+img_path+")");
-	// });
+	$(".slide_img").each(function () {
+		var img_path = $(this).attr("src");
+		$(this).parents(".slide_item").css("background-image","url("+img_path+")");
+	});
 	//Custom Dropdown
 	$(".d_dropdown_toggle").on("click", function(){
 		$(this).next(".dropdown_menu").slideToggle(100);
@@ -368,3 +421,15 @@
 		});
 	}
 })(jQuery);
+//google language translator
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en' , includedLanguages : 'mr,en,hi'}, 'google_translate_element');
+}
+//Print id card js
+function printDiv(idcardprint) {
+	var printContents = document.getElementById(idcardprint).innerHTML;
+	var originalContents = document.body.innerHTML;
+	document.body.innerHTML = printContents;
+	window.print();
+	document.body.innerHTML = originalContents;
+}
